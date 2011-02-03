@@ -1,0 +1,82 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="#">Cream Desktop Environment v0.0.6 documentation</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-cream-desktop-environment-s-documentation">
+<h1>Welcome to Cream Desktop Environment&#8217;s documentation!<a class="headerlink" href="#welcome-to-cream-desktop-environment-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guidelines/index">Guidelines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guidelines/general">General Principles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guidelines/general#keep-it-simple-stupid">Keep it Simple, Stupid!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines/general#explicity-or-implicity">Explicity or Implicity?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines/development">Guidelines for Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guidelines/development#micro-commits">Micro Commits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines/development#commit-messages">Commit Messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/index">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/cream">Documentation for the module <cite>cream</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/ipc">Documentation for the module <cite>cream.ipc</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/cream.gui">Documentation for the module <cite>cream.gui</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/cream.gui#using-the-timeline">Using the Timeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/cream.gui#module-cream.gui">API Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/general/index">General</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/general/modulewriting">Module Writing Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/melange/index">Melange</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/melange/index#widget-writing-guide">Widget Writing Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+      </div>
+</div>

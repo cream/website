@@ -1,0 +1,74 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="index">Cream Desktop Environment v0.0.6 documentation</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+
+   <h1 id="index">Index</h1>
+
+   <div class="genindex-jumpbox">
+   <a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#Q"><strong>Q</strong></a> 
+   </div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui#cream.gui.CompositeBin.add">add() (cream.gui.CompositeBin method)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui#cream.gui.CompositeBin">CompositeBin (class in cream.gui)</a></dt>
+    <dt><a href="api/cream#module-cream">cream (module)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui#module-cream.gui">cream.gui (module)</a></dt>
+    <dt><a href="api/ipc#module-cream.ipc">cream.ipc (module)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream#cream.Module.main">main() (cream.Module method)</a></dt>
+</dl></td>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream#cream.Module">Module (class in cream)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream#cream.Module.quit">quit() (cream.Module method)</a></dt>
+</dl></td>
+</tr></table>
+
+
+
+          </div>
+      </div>
+</div>

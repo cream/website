@@ -1,0 +1,61 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="index">Guidelines</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="guidelines-for-development">
+<h1>Guidelines for Development<a class="headerlink" href="#guidelines-for-development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="micro-commits">
+<h2>Micro Commits<a class="headerlink" href="#micro-commits" title="Permalink to this headline">¶</a></h2>
+<p>There has always been a discussion on how to commit code changes. Some people tend to commit huge patches fixing a bug or implementing a new feature and some others try to keep their commits small. From a bigger project&#8217;s point of view it&#8217;s a lot easier to work with small and easy to follow commits than to review huge patches and get lost in tons of changes.</p>
+<p>Therefore we would recommend a higher frequency of smaller commits than just a single commit every few days. For more reasons for this recommendation please refer to Lucas Rocha&#8217;s great blog article <a class="reference external" href="http://lucasr.org/2011/01/29/micro-commits/">Micro Commits</a> on the very same topic.</p>
+</div>
+<div class="section" id="commit-messages">
+<h2>Commit Messages<a class="headerlink" href="#commit-messages" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s make this one short and clear:</p>
+<div class="section" id="good-commit-message">
+<h3>Good Commit Message<a class="headerlink" href="#good-commit-message" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>Added class `Bar` to `cream.foo`, fixing http://bit.ly/fLxmLN.</pre>
+</div>
+<p>A good commit message should</p>
+<ul class="simple">
+<li>consist of a complete (although maybe elliptic) and grammatically correct English sentence,</li>
+<li>refer to the changed code in a correct and easy to follow way and</li>
+<li>make clear what you intended with the commit.</li>
+</ul>
+</div>
+<div class="section" id="bad-commit-message">
+<h3>Bad Commit Message<a class="headerlink" href="#bad-commit-message" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>added class bar to cream.foo</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

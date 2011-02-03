@@ -1,0 +1,46 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="index">Guidelines</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="general-principles">
+<h1>General Principles<a class="headerlink" href="#general-principles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="keep-it-simple-stupid">
+<h2>Keep it Simple, Stupid!<a class="headerlink" href="#keep-it-simple-stupid" title="Permalink to this headline">¶</a></h2>
+<p>Cream follows the <a class="reference external" href="http://en.wikipedia.org/wiki/KISS_principle">KISS</a> principle &#8211; in every aspect. That includes
+our framework that aims to be very easy to use but also our
+applications and services having a very simple and sleek user
+interface.</p>
+</div>
+<div class="section" id="explicity-or-implicity">
+<h2>Explicity or Implicity?<a class="headerlink" href="#explicity-or-implicity" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

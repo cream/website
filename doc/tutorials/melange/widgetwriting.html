@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Melange: Widget Writing Guide &mdash; Cream Desktop Environment v0.0.6 documentation</title>
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Cream Desktop Environment v0.0.6 documentation" href="../../index.html" />
+    <link rel="up" title="Melange" href="index.html" />
+    <link rel="prev" title="Melange" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Melange"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Cream Desktop Environment v0.0.6 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Tutorials</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Melange</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="melange-widget-writing-guide">
+<h1>Melange: Widget Writing Guide<a class="headerlink" href="#melange-widget-writing-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Writing widgets for melange is really easy. The UI is simply a renderd html-page which can be extended by javascript and python.</p>
+<p>In this tutorial we will create a little widget which displays the current time.</p>
+</div>
+<div class="section" id="basic-setup">
+<h2>Basic Setup<a class="headerlink" href="#basic-setup" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>At first we will create some files in the widgets basedirectory:</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt><em>manifest.xml</em></dt>
+<dd><p class="first last">Here all the basic information about the widget is located</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>__init__.py</em></dt>
+<dd><p class="first last">This is the widgets python-backend</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>skins/default/index.html</em></dt>
+<dd><p class="first last">This is the html-file which is then renderd to the desktop</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>skins/default/manifest.xml</em></dt>
+<dd><p class="first last">Here some basic information about the skin is located</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="manifests">
+<h2>Manifests<a class="headerlink" href="#manifests" title="Permalink to this headline">¶</a></h2>
+<p>Every widget has to have a <em>manifest.xml</em> file in its rootdirectory. It looks like this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">namespace=</span><span class="s">&#39;org.cream.melange&#39;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">&quot;Digital-clock Widget&quot;</span> <span class="na">id=</span><span class="s">&quot;.digital-clockWidget&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span> <span class="na">type=</span><span class="s">&quot;.Widget&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;license</span> <span class="na">title=</span><span class="s">&quot;GPL&quot;</span> <span class="na">version=</span><span class="s">&quot;3+&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;description</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span> <span class="na">content=</span><span class="s">&quot;A nice little clock widget&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;author</span> <span class="na">name=</span><span class="s">&quot;Your Name&quot;</span> <span class="na">type=</span><span class="s">&quot;developer&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/component&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</pre></div>
+</div>
+<p>There has to be a <em>manifest.xml</em> in every skindirectory too, so let us add this to <em>skins/default/manifest.xml</em>:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">namespace=</span><span class="s">&#39;org.cream.melange&#39;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">&quot;Default&quot;</span> <span class="na">id=</span><span class="s">&quot;.digitalclock-widget.DefaultSkin&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span> <span class="na">type=</span><span class="s">&quot;.Skin&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;license</span> <span class="na">title=</span><span class="s">&quot;GPL&quot;</span> <span class="na">version=</span><span class="s">&quot;3+&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;description</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span> <span class="na">content=</span><span class="s">&quot;A default skin for the Digital-Clock widget.&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;author</span> <span class="na">name=</span><span class="s">&quot;Your Name&quot;</span> <span class="na">type=</span><span class="s">&quot;developer&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/component&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</pre></div>
+</div>
+<p>For further information on the manifests please consult the documentation of <tt class="xref py py-mod docutils literal"><span class="pre">cream.manifest</span></tt>.</p>
+</div>
+<div class="section" id="python-backend">
+<h2>Python backend<a class="headerlink" href="#python-backend" title="Permalink to this headline">¶</a></h2>
+<p>With melange it is very easy to interact between python and javascript so this gives us the possibility to do complex tasks within python and hand the result over to javascript.</p>
+<p>In order to do so, we have to import the API from <tt class="xref py py-mod docutils literal"><span class="pre">cream.contrib.melange</span></tt> and create a subclass of <tt class="xref py py-class docutils literal"><span class="pre">api.API</span></tt>.
+But lets see how it looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">cream.contrib.melange</span> <span class="kn">import</span> <span class="n">api</span>
+
+<span class="c"># This will register the API-class as `widget.api.digitalclock`</span>
+<span class="c"># accessable from your JavaScript code.</span>
+<span class="nd">@api.register</span><span class="p">(</span><span class="s">&#39;digitalclock&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">DigitalClock</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">API</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">API</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c"># This exposes the method which can be called in your JavaScript code as</span>
+    <span class="c"># `widget.api.digitalclock.get_current_time();`</span>
+    <span class="nd">@api.expose</span>
+    <span class="k">def</span> <span class="nf">get_current_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># Get the time in this format hours:minutes:seconds</span>
+        <span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">current_time</span>
+</pre></div>
+</div>
+<p>With <tt class="xref py py-func docutils literal"><span class="pre">api.register()</span></tt> we tell melange to instance the <em>class</em> and make it public in the js.
+By decorating the method with <tt class="xref py py-func docutils literal"><span class="pre">api.expose()</span></tt> we can acces it from the javascript and get the return value.
+This is actually all magic that happens here. Easy isn&#8217;t it?</p>
+</div>
+<div class="section" id="creating-the-interface">
+<h2>Creating the interface<a class="headerlink" href="#creating-the-interface" title="Permalink to this headline">¶</a></h2>
+<p>Now we are ready to design the widget. As mentioned above this is done by one html-file.</p>
+<p>In <tt class="docutils literal"><span class="pre">&lt;head&gt;</span></tt> we import the stylesheet used for all widgets (<tt class="docutils literal"><span class="pre">melange.css</span></tt>) which gives all widgets their style according to the used theme:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;/common/ui/melange.css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>Now we need to import mootools and the cream-js-framework:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/common/core/mootools.js&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/common/core/cream.js&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>Now we need some widget-spezific style to make it look nice by adding some css. You could also load the css from a file:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/style&gt;</span>
+</pre></div>
+</div>
+<p>Now comes the interesting part: The bridge to our python-backend.
+We define a function <tt class="docutils literal"><span class="pre">main</span></tt> which automatically gets called when the widget is initialized. We set an intervall in order to update the time every second.
+Then we call our python method und as a argument it expects a callback which is called when the method finishes.
+The return value is stored in the argument of the callback and now we can set the text of our <em>clock</em> div to the current time:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+    <span class="kd">function</span> <span class="nx">main</span><span class="p">(){</span>
+        <span class="nx">setIntervall</span><span class="p">(</span><span class="nx">update</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">update</span><span class="p">(){</span>
+        <span class="nx">widget</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">digitalclock</span><span class="p">.</span><span class="nx">get_current_time</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;clock&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">time</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p>Last but not least we still need a body, so here it comes:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 100px;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;background&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;clock&quot;</span><span class="nt">&gt;</span>
+                00:00
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></div>
+</div>
+<p>If you put everything together it should look like this and you&#8217;re ready to load this widget:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span class="na">xml:lang=</span><span class="s">&quot;en&quot;</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>DigitalClock widget<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;content-type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html;charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- Melange&#39;s style definitions. --&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;/common/ui/melange.css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- The JavaScript framework we are using. --&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/common/core/mootools.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="c">&lt;!-- The JavaScript for setting up the api --&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/common/core/cream.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;/style&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+            <span class="kd">function</span> <span class="nx">main</span><span class="p">(){</span>
+                <span class="nx">setIntervall</span><span class="p">(</span><span class="nx">update</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="kd">function</span> <span class="nx">update</span><span class="p">(){</span>
+                <span class="nx">widget</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nx">digitalclock</span><span class="p">.</span><span class="nx">get_current_time</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;clock&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">time</span><span class="p">;</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;widget&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 100px;&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;background&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;clock&quot;</span><span class="nt">&gt;</span>
+                    00:00
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Melange: Widget Writing Guide</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#basic-setup">Basic Setup</a></li>
+<li><a class="reference internal" href="#manifests">Manifests</a></li>
+<li><a class="reference internal" href="#python-backend">Python backend</a></li>
+<li><a class="reference internal" href="#creating-the-interface">Creating the interface</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Melange</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/tutorials/melange/widgetwriting.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Melange"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Cream Desktop Environment v0.0.6 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Tutorials</a> &raquo;</li>
+          <li><a href="index.html" >Melange</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Sebastian Billaudelle, Jonas Haag, Immanuel Peratoner, Friedrich Weber.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>

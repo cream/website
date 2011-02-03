@@ -1,0 +1,47 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cream">Documentation for the module <cite>cream</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ipc">Documentation for the module <cite>cream.ipc</cite></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cream.gui">Documentation for the module <cite>cream.gui</cite></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cream.gui#using-the-timeline">Using the Timeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cream.gui#module-cream.gui">API Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

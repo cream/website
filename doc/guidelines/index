@@ -1,0 +1,50 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="guidelines">
+<h1>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="general">General Principles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="general#keep-it-simple-stupid">Keep it Simple, Stupid!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general#explicity-or-implicity">Explicity or Implicity?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development">Guidelines for Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development#micro-commits">Micro Commits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development#commit-messages">Commit Messages</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

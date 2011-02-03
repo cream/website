@@ -1,0 +1,49 @@
+
+
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="module-cream">
+<span id="documentation-for-the-module-cream"></span><h1>Documentation for the module <cite>cream</cite><a class="headerlink" href="#module-cream" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cream.Module">
+<em class="property">class </em><tt class="descclassname">cream.</tt><tt class="descname">Module</tt><big>(</big><em>module_id</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#cream.Module" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the baseclass for every Cream module. It bundles features
+you would need within your application or service, such as:</p>
+<blockquote>
+<div><ul class="simple">
+<li>an GObject mainloop,</li>
+<li>logging capabilities,</li>
+<li>and meta data handling.</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cream.Module.main">
+<tt class="descname">main</tt><big>(</big><em>enable_threads=True</em><big>)</big><a class="headerlink" href="#cream.Module.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a GObject-mainloop.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable_threads</strong> (<cite>bool</cite>) &#8211; Whether to enable GObjects threading
+capabilities. This can have negative
+impact on some applications. Please use
+with care!</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cream.Module.quit">
+<tt class="descname">quit</tt><big>(</big><big>)</big><a class="headerlink" href="#cream.Module.quit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quit the mainloop and exit the application.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+      </div>

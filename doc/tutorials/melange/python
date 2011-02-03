@@ -1,0 +1,74 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="../index">Tutorials</a>
+        » <a href="index">Melange</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>Writing a python API for your widget is very simple too.</p>
+<p>You just create a subclass of <tt class="xref py py-mod docutils literal"><span class="pre">cream.contrib.api.API</span></tt> and the methods of this class can then be accessed from the javascript.</p>
+<p>But you certainly don&#8217;t want every method to be accessible, so you have to decorate these methods with <tt class="docutils literal"><span class="pre">&#64;api.expose</span></tt> and they can be used from the JS.</p>
+<p>This is actually everything you have to know about the API, so lets have a look on the whole code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># modules needed to download and parse the data</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">closing</span>
+<span class="kn">from</span> <span class="nn">lxml.etree</span> <span class="kn">import</span> <span class="n">parse</span>
+
+<span class="c"># the api for the widget</span>
+<span class="kn">from</span> <span class="nn">cream.contrib.melange</span> <span class="kn">import</span> <span class="n">api</span>
+
+<span class="c"># the url which will be queried to get the weather data</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s">&#39;http://api.wunderground.com/auto/wui/geo/WXCurrentObXML/index.xml?query={location}&#39;</span>
+
+<span class="c"># This will register the API-class as `widget.api.tutorial`</span>
+<span class="c"># accessable from your JavaScript code.</span>
+<span class="nd">@api.register</span><span class="p">(</span><span class="s">&#39;tutorial&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Tutorial</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">API</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">api</span><span class="o">.</span><span class="n">API</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c"># This exposes the method which can be called in your JavaScript code as</span>
+    <span class="c"># `widget.api.tutorial.get_temperature(callback(temperature);`</span>
+    <span class="nd">@api.expose</span>
+    <span class="k">def</span> <span class="nf">get_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="s">&#39;Berlin, Germany&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">closing</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">))</span> <span class="k">as</span> <span class="n">xml</span><span class="p">:</span>
+            <span class="n">weather_data</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">weather_data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;temp_c&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+<p>We use a hardcoded location right now, but in the <tt class="xref doc docutils literal"><span class="pre">config</span> <span class="pre">section</span></tt> I&#8217;ll show you something better.</p>
+<p>In the next section we&#8217;ll glue python and javascript together: <a class="reference internal" href="python-js"><em>Accessing python from javascript</em></a></p>
+</div>
+
+
+          </div>
+      </div>
+</div>
