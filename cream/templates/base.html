@@ -1,0 +1,77 @@
+{% load applicationcontent_tags feincms_tags feincms_page_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>{{ feincms_page.title }} (Cream Desktop Environment)</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />  
+    <link rel="stylesheet" type="text/css" href="/static/style/main.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/static/style/pygments.css" media="screen">
+</head>
+
+<body>
+    <div id="header">
+        <div style="width: 1000px; margin: 0px auto 0px auto;">
+            <img style="vertical-align: middle;" src="/static/images/logo.png" />
+        <div id="navigation" style="vertical-align: middle; height: 20px; margin: 25px; padding: 5px; float: right; color: #EEEEEE; text-shadow: 0px 0px 3px rgba(0, 0, 0, 1); font-size: 1.2em;">
+            {% feincms_navigation of feincms_page as toplevel level=1 %}
+            {% for p in toplevel %}
+            <li><a {% if p|is_equal_or_parent_of:feincms_page %}class="mark"{% endif %} href="{{ p.get_absolute_url }}">{{ p.title }}</a></li>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+    <div style="margin: 0px auto; width: 1000px;">
+    <div id="main">
+        {% feincms_render_region feincms_page "main" request %}
+    </div>
+    
+    <div id="sidebar">
+    
+        <div>
+        <h3>Open Source</h3>
+        
+        <p>
+            Cream is - and always will be - an Open Source project. We would like to encourage you to digg into our source code and look for things to improve or add.
+        </p>
+
+        <div class="ribbon">
+                <a href="https://github.com/cream">Fork Cream on GitHub!</a>
+        </div>
+        </div>
+        
+        
+
+            {% feincms_navigation of feincms_page as sublevel level=2 %}
+            {% if sublevel %} {# stupid django 1.0 compatibility ... :-) #}
+                <div style="border-top: 2px solid #DFDFDF; padding-top: 10px; margin-top: 10px;">
+                {% for p in sublevel %}
+                    {% if forloop.first %}<ul id="subpages" style="padding: 0px; margin: 0px;">{% endif %}
+                    <li><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></li>
+                    {% if forloop.last %}</ul>{% endif %}
+                {% endfor %}
+                </div>
+            {% else %}
+            {% endif %}
+
+            {% if feincms_page.content.sidebar %}
+            <div style="border-top: 2px solid #DFDFDF; padding-top: 10px; margin-top: 10px;">
+            {% feincms_render_region feincms_page "sidebar" request %}
+            </div>
+            {% endif %}
+    </div>
+
+    </div>
+
+    {% feincms_frontend_editing feincms_page request %}
+
+    <div style="clear: both;"></div>
+    <div id="footer">
+        © 2007 - 2011 by the Cream Desktop Environment
+    </div>
+</body>
+
+</html>

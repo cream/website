@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="/static/slideshow/css/slideshow.css" media="screen" />
+{% if enable_lightbox %}
+<link rel="stylesheet" type="text/css" href="/static/lightbox/css/lightbox.css" media="screen" />
+{% endif %}
+<script type="text/javascript" src="/static/slideshow/js/mootools.js"></script>
+<script type="text/javascript" src="/static/slideshow/js/slideshow.js"></script>
+{% if enable_lightbox %}
+<script type="text/javascript" src="/static/lightbox/js/lightbox.js"></script>
+{% endif %}
+
+<script type="text/javascript">		
+
+//<![CDATA[
+  window.addEvent('domready', function(){
+    var data = {
+        {% for image in images %}
+            '{{ image.url }}': {thumbnail: '{{ image.thumb }}', caption: '<span style="font-size: 1.2em; font-weight: bold;">{{ image.caption }}</span><div>{{ image.description }}</div>'},
+        {% endfor %}
+    };
+    var myShow = new Slideshow('show', data, {controller: true, height: {{ height }}, width: {{ width }}, captions: true, delay: {{ delay }}{% if enable_lightbox %}, linked: true{% endif %}{% if autoplay %}{% else %}, paused: true{% endif %}{% if show_thumbnails %}, thumbnails: true{% endif %}});
+    {% if enable_lightbox %}
+    var box = new Lightbox({
+			  'onClose': function(){ this.pause(false); }.bind(myShow), 
+			  'onOpen': function(){ this.pause({% if autoplay %}true{% else %}false{% endif %}); }.bind(myShow) 
+			});
+    {% endif %}
+  });
+//]]>
+</script>
+
+<div id="show" class="box slideshow" style="padding: 0px; height: *; width: {{ width }}px;{% if show_thumbnails %} margin-bottom: 120px;{% endif %}">
+{% if enable_lightbox %}
+<a rel="lightbox" href="images/7.jpg">
+{% endif %}
+      <img src="examples/1.jpg" alt="Slideshow 2! Example 2: Integration with Lightbox" />
+      {% if enable_lightbox %}
+    </a>
+    {% endif %}
+</div>

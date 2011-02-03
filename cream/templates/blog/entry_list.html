@@ -1,0 +1,31 @@
+{% load feincms_tags %}
+
+<style type="text/css">
+#blog {
+    text-align: justify;
+    }
+
+#blog img {
+    width: 560px;
+    display: block;
+    margin: 20px auto 20px auto;
+    
+    padding: 8px;
+    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+    }
+</style>
+
+<div id="blog">
+    {% for object in object_list %}
+        <div class="box" style="margin: 0px 0px 30px 0px; padding: 15px;">
+            <h2>{{ object.title }}</h2>
+            <div style="font-size: .8em; color: #777777; margin-top: -10px;">{{ object.published_on }}</div>
+
+            <div>
+                {% feincms_render_region object "main" request %}
+            </div>
+
+            <!--<span style="font-size: .8em; color: #777777;"><a href="{% url blog_entry_details object_id=object.id %}">more</a></span>-->
+        </div>
+    {% endfor %}
+</div>

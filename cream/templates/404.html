@@ -1,0 +1,32 @@
+{% load applicationcontent_tags feincms_tags feincms_page_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>{{ feincms_page.title }}</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/static/style/main.css" media="screen">
+</head>
+
+<body>
+    <div id="header">
+        <div style="width: 1000px; margin: 0px auto 0px auto;">
+            <img style="vertical-align: middle;" src="/static/images/logo.png" />
+        <div id="navigation" style="vertical-align: middle; height: 20px; margin: 25px; padding: 5px; float: right; color: #EEEEEE; text-shadow: 0px 0px 3px rgba(0, 0, 0, 1); font-size: 1.2em;">
+            {% feincms_navigation of feincms_page as toplevel level=1 %}
+            {% for p in toplevel %}
+            <li><a {% if p|is_equal_or_parent_of:feincms_page %}class="mark"{% endif %} href="{{ p.get_absolute_url }}">{{ p.title }}</a></li>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+
+    <div style="margin: 0px auto; width: 1000px;">
+        <h1>404 - Not Found!</h1>
+    <div id="footer">
+        © 2007 - 2011 by the Cream Desktop Environment
+    </div>
+</body>
+
+</html>
