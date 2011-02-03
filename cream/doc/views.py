@@ -1,6 +1,6 @@
 import os
 
-DOCUMENTATION_ROOT = '/home/stein/Labs/Cream/doc/build/html'
+DOCUMENTATION_ROOT = os.path.join(os.path.dirname(__file__), '../../doc/')
 
 def view(request, path):
     if path == '':
