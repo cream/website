@@ -45,6 +45,7 @@ dt:hover > a.headerlink {
 <li>consist of a complete (although maybe elliptic) and grammatically correct English sentence,</li>
 <li>refer to the changed code in a correct and easy to follow way and</li>
 <li>make clear what you intended with the commit.</li>
+<li>The title should be max 80 chars long. If your commit needs more explanation, then use a short title and put the explanation into the body of the commit.</li>
 </ul>
 </div>
 <div class="section" id="bad-commit-message">
