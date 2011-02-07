@@ -25,6 +25,7 @@ A good commit message should
 - consist of a complete (although maybe elliptic) and grammatically correct English sentence,
 - refer to the changed code in a correct and easy to follow way and
 - make clear what you intended with the commit.
+- The title should be max 80 chars long. If your commit needs more explanation, then use a short title and put the explanation into the body of the commit.
 
 Bad Commit Message
 ++++++++++++++++++

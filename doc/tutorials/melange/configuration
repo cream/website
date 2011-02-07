@@ -1,0 +1,75 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="../index">Tutorials</a>
+        » <a href="index">Melange</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="widget-configuration">
+<h1>Widget Configuration<a class="headerlink" href="#widget-configuration" title="Permalink to this headline">¶</a></h1>
+<p>All widgets have a nice integrated configuration, which can be accessed by right-clicking on the widget and selecting <em>Configure</em>.
+You can add your own field there and it will be integrated in the dialog and the can easily be changed there.</p>
+<p>All there is to do, is to create a file <em>scheme.xml</em> in <tt class="docutils literal"><span class="pre">widget_root/configuration</span></tt></p>
+<p>Remember the hardcoded location in our python backend? Time to move it to the config:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;location</span> <span class="na">label=</span><span class="s">&quot;Location&quot;</span> <span class="na">type=</span><span class="s">&quot;char&quot;</span><span class="nt">&gt;</span>Berlin, Germany<span class="nt">&lt;/location&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Module <tt class="xref py py-mod docutils literal"><span class="pre">cream.config</span></tt></p>
+</div>
+<p>Now lets see how we can use this data:</p>
+</div>
+<div class="section" id="access-from-python">
+<h1>Access from python<a class="headerlink" href="#access-from-python" title="Permalink to this headline">¶</a></h1>
+<p>Your widget class has the configuration saved in <tt class="docutils literal"><span class="pre">self.config</span></tt>.
+Fields have read and write access.</p>
+<p>In our example we can get the location like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_temperature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">location</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">closing</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">))</span> <span class="k">as</span> <span class="n">xml</span><span class="p">:</span>
+        <span class="n">weather_data</span> <span class="o">=</span> <span class="n">parse</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">weather_data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;temp_c&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="access-from-javascript">
+<h1>Access from javascript<a class="headerlink" href="#access-from-javascript" title="Permalink to this headline">¶</a></h1>
+<p>You can also get and set the config values from javascript like this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">widget</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">);</span> <span class="c1">//get the value</span>
+
+<span class="nx">widget</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="nx">new_value</span><span class="p">);</span> <span class="c1">// set `location` to new_value</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

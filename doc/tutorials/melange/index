@@ -38,6 +38,9 @@ dt:hover > a.headerlink {
 <li class="toctree-l1"><a class="reference internal" href="skins">Skins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-js">Accessing python from javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration">Widget Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration#access-from-python">Access from python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration#access-from-javascript">Access from javascript</a></li>
 </ul>
 </div>
 </div>
