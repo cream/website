@@ -40,6 +40,7 @@ class Image:
 class SlideshowContent(models.Model):
     category = models.ForeignKey(Category)
     show_thumbnails = models.BooleanField()
+    show_captions = models.BooleanField()
     autoplay = models.BooleanField()
     enable_lightbox = models.BooleanField()
     delay = models.IntegerField()
@@ -69,6 +70,7 @@ class SlideshowContent(models.Model):
             'delay': self.delay,
             'width': self.width,
             'height': self.height,
+            'show_captions': self.show_captions,
             'show_thumbnails': self.show_thumbnails,
             'autoplay': self.autoplay,
             'enable_lightbox': self.enable_lightbox

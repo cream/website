@@ -17,7 +17,7 @@
             '{{ image.url }}': {thumbnail: '{{ image.thumb }}', caption: '<span style="font-size: 1.2em; font-weight: bold;">{{ image.caption }}</span><div>{{ image.description }}</div>'},
         {% endfor %}
     };
-    var myShow = new Slideshow('show', data, {controller: true, height: {{ height }}, width: {{ width }}, captions: true, delay: {{ delay }}{% if enable_lightbox %}, linked: true{% endif %}{% if autoplay %}{% else %}, paused: true{% endif %}{% if show_thumbnails %}, thumbnails: true{% endif %}});
+    var myShow = new Slideshow('show', data, {controller: true, height: {{ height }}, width: {{ width }}, delay: {{ delay }}{% if enable_lightbox %}, linked: true{% endif %}{% if autoplay %}{% else %}, paused: true{% endif %}{% if show_captions %}, captions: true{% endif %}{% if show_thumbnails %}, thumbnails: true{% endif %}});
     {% if enable_lightbox %}
     var box = new Lightbox({
 			  'onClose': function(){ this.pause(false); }.bind(myShow), 
