@@ -56,8 +56,12 @@ class SlideshowContent(models.Model):
         
         for img in self.category.mediafile_set.all():
             thumb = feincms.templatetags.feincms_thumbnail.thumbnail(img.file.name, '240x120')
-            caption = img.translation.caption
-            description = img.translation.description
+            try:
+                caption = img.translation.caption
+                description = img.translation.description
+            except:
+                caption = ""
+                description = ""
 
             img = Image(img.file.url, thumb, caption, description)
             
