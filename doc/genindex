@@ -29,7 +29,7 @@ dt:hover > a.headerlink {
    <h1 id="index">Index</h1>
 
    <div class="genindex-jumpbox">
-   <a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#Q"><strong>Q</strong></a> 
+   <a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> 
    </div>
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
@@ -43,10 +43,18 @@ dt:hover > a.headerlink {
   <td style="width: 33%" valign="top"><dl>
     <dt><a href="api/cream.gui#cream.gui.CompositeBin">CompositeBin (class in cream.gui)</a></dt>
     <dt><a href="api/cream#module-cream">cream (module)</a></dt>
+    <dt><a href="api/cream.gui#module-cream.gui">cream.gui (module)</a></dt>
 </dl></td>
   <td style="width: 33%" valign="top"><dl>
-    <dt><a href="api/cream.gui#module-cream.gui">cream.gui (module)</a></dt>
+    <dt><a href="api/cream.gui.mtk#module-cream.gui.mtk">cream.gui.mtk (module)</a></dt>
     <dt><a href="api/ipc#module-cream.ipc">cream.ipc (module)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui.mtk#cream.gui.mtk.Event">Event (class in cream.gui.mtk)</a></dt>
 </dl></td>
 </tr></table>
 
@@ -60,10 +68,38 @@ dt:hover > a.headerlink {
 </dl></td>
 </tr></table>
 
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui.mtk#cream.gui.mtk.Position">Position (class in cream.gui.mtk)</a></dt>
+</dl></td>
+</tr></table>
+
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
     <dt><a href="api/cream#cream.Module.quit">quit() (cream.Module method)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui.mtk#cream.gui.mtk.Event.restrict">restrict() (cream.gui.mtk.Event method)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui.mtk#cream.gui.mtk.Size">Size (class in cream.gui.mtk)</a></dt>
+</dl></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+    <dt><a href="api/cream.gui.mtk#cream.gui.mtk.Event.translate">translate() (cream.gui.mtk.Event method)</a></dt>
 </dl></td>
 </tr></table>
 

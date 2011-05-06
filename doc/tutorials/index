@@ -30,10 +30,13 @@ dt:hover > a.headerlink {
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="general/index">General</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="general/modulewriting">Module Writing Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingdevenv">Using the Development Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usingdevenv#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usingdevenv#activating-the-development-environment">Activating the Development Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usingdevenv#running-modules">Running Modules</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="modulewriting">Module Writing Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melange/index">Melange</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="melange/index#widget-writing-guide">Widget Writing Guide</a></li>
 </ul>

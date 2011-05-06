@@ -9,3 +9,4 @@ Contents:
     cream
     ipc
     cream.gui
+    cream.gui.mtk

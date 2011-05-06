@@ -1,0 +1,57 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="index">Tutorials</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="using-the-development-environment">
+<h1>Using the Development Environment<a class="headerlink" href="#using-the-development-environment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>You can find instructions for installing Cream from Git here: <a class="reference external" href="http://cream-project.org/install/">http://cream-project.org/install/</a></p>
+</div>
+<div class="section" id="activating-the-development-environment">
+<h2>Activating the Development Environment<a class="headerlink" href="#activating-the-development-environment" title="Permalink to this headline">¶</a></h2>
+<p>You need to run the following command in every console window you want to use the development environment in:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">source </span>dev/bin/activate
+</pre></div>
+</div>
+<p>This will prepend <tt class="docutils literal"><span class="pre">(dev)</span></tt> to your bash prompt to show you, that you are working in a development environment.</p>
+</div>
+<div class="section" id="running-modules">
+<h2>Running Modules<a class="headerlink" href="#running-modules" title="Permalink to this headline">¶</a></h2>
+<p>Modules don&#8217;t get installed in your development environment. Commands like <tt class="docutils literal"><span class="pre">melange</span></tt> won&#8217;t work &#8211; unless you have modules installed in your system, too.</p>
+<p>Instead, you may find the modules in <tt class="docutils literal"><span class="pre">src/modules</span></tt>. Just change into the particular directory and run the module like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>src/modules/melange/src
+<span class="nv">$ </span>./melange.py
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

@@ -1,0 +1,130 @@
+
+<style type="text/css">
+a.headerlink {
+    visibility: hidden;
+    color: #777777;
+    padding-left: 5px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink {
+    visibility: visible;
+}
+</style>
+
+<div style="margin-bottom: 10px;">
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="index">API Documentation</a>
+</div>
+
+<div class="box" style="padding: 20px;">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="documentation-for-the-module-cream-gui-mtk">
+<h1>Documentation for the module <cite>cream.gui.mtk</cite><a class="headerlink" href="#documentation-for-the-module-cream-gui-mtk" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-cream.gui.mtk">
+<span id="api-documentation"></span><h2>API Documentation<a class="headerlink" href="#module-cream.gui.mtk" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cream.gui.mtk.Event">
+<em class="property">class </em><tt class="descclassname">cream.gui.mtk.</tt><tt class="descname">Event</tt><big>(</big><em>type</em>, <em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#cream.gui.mtk.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object representing CMT events.</p>
+<dl class="docutils">
+<dt>Currently we support support the following events:</dt>
+<dd><ul class="first last simple">
+<li><cite>cream.gui.cmt.EVENT_ENTER</cite></li>
+<li><cite>cream.gui.cmt.EVENT_LEAVE</cite></li>
+<li><cite>cream.gui.cmt.EVENT_MOTION</cite></li>
+<li><cite>cream.gui.cmt.EVENT_CLICK</cite></li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> &#8211; The type of the event.</li>
+<li><strong>x</strong> (<cite>int</cite>) &#8211; The horizontal position of the pointer during this event.</li>
+<li><strong>y</strong> (<cite>int</cite>) &#8211; The vertical position of the pointer during this event.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cream.gui.mtk.Event.restrict">
+<tt class="descname">restrict</tt><big>(</big><em>x</em>, <em>y</em>, <em>width</em>, <em>height</em><big>)</big><a class="headerlink" href="#cream.gui.mtk.Event.restrict" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cream.gui.mtk.Event.translate">
+<tt class="descname">translate</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#cream.gui.mtk.Event.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate the position of the event by <cite>x</cite> and <cite>y</cite>, e. g. while
+delegating an event to a child widget.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<cite>int</cite>) &#8211; The horizontal translation.</li>
+<li><strong>y</strong> (<cite>int</cite>) &#8211; The vertical translation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cream.gui.mtk.Position">
+<em class="property">class </em><tt class="descclassname">cream.gui.mtk.</tt><tt class="descname">Position</tt><big>(</big><em>x=-1</em>, <em>y=-1</em><big>)</big><a class="headerlink" href="#cream.gui.mtk.Position" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object representing the position of a <cite>Widget</cite> on a <cite>Pinboard</cite> widget
+or something similiar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<cite>int</cite>) &#8211; The horizontal position.</li>
+<li><strong>y</strong> (<cite>int</cite>) &#8211; The vertical position.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cream.gui.mtk.Size">
+<em class="property">class </em><tt class="descclassname">cream.gui.mtk.</tt><tt class="descname">Size</tt><big>(</big><em>width=-1</em>, <em>height=-1</em><big>)</big><a class="headerlink" href="#cream.gui.mtk.Size" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object representing the size of a <cite>Widget</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> (<cite>int</cite>) &#8211; The horizontal dimension.</li>
+<li><strong>height</strong> (<cite>int</cite>) &#8211; The vertical dimension.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+      </div>
+</div>

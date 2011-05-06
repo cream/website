@@ -18,19 +18,16 @@ dt:hover > a.headerlink {
 </style>
 
 <div style="margin-bottom: 10px;">
-    <a href="../../index">Cream Desktop Environment v0.0.6 documentation</a>
-        » <a href="../index">Tutorials</a>
-        » <a href="index">Melange</a>
+    <a href="../index">Cream Desktop Environment v0.0.6 documentation</a>
+        » <a href="index">Tutorials</a>
 </div>
 
 <div class="box" style="padding: 20px;">
       <div class="documentwrapper">
           <div class="body">
             
-  <div class="section" id="accessing-python-from-javascript">
-<h1>Accessing python from javascript<a class="headerlink" href="#accessing-python-from-javascript" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon.</p>
-<p><a class="reference internal" href="configuration"><em>Configuration</em></a></p>
+  <div class="section" id="module-writing-guide">
+<h1>Module Writing Guide<a class="headerlink" href="#module-writing-guide" title="Permalink to this headline">¶</a></h1>
 </div>
 
 

@@ -50,6 +50,11 @@ dt:hover > a.headerlink {
      <tr class="cg-1">
        <td></td>
        <td>&nbsp;&nbsp;&nbsp;
+       <a href="api/cream.gui.mtk#module-cream.gui.mtk"><tt class="xref">cream.gui.mtk</tt></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&nbsp;&nbsp;&nbsp;
        <a href="api/ipc#module-cream.ipc"><tt class="xref">cream.ipc</tt></a></td><td>
        <em></em></td></tr>
    </table>

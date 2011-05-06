@@ -51,13 +51,20 @@ dt:hover > a.headerlink {
 <li class="toctree-l3"><a class="reference internal" href="api/cream.gui#module-cream.gui">API Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="api/cream.gui.mtk">Documentation for the module <cite>cream.gui.mtk</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/cream.gui.mtk#module-cream.gui.mtk">API Documentation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/general/index">General</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/general/modulewriting">Module Writing Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/usingdevenv">Using the Development Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/usingdevenv#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/usingdevenv#activating-the-development-environment">Activating the Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/usingdevenv#running-modules">Running Modules</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/modulewriting">Module Writing Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/melange/index">Melange</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/melange/index#widget-writing-guide">Widget Writing Guide</a></li>
 </ul>
